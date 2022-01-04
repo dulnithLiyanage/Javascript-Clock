@@ -17,7 +17,10 @@ function displayTime() {
   m = m < 10 ? `0${m}` : m;
   s = s < 10 ? `0${s}` : s;
 
-  console.log(`${h}:${m}:${s} ${period}`);
+  let clock = document.querySelector("#digitalClock");
+  clock.textContent = `${h}:${m}:${s} ${period}`;
+
+  setInterval(displayTime, 1000);
 }
 
-setInterval(displayTime, 1000);
+displayTime();
